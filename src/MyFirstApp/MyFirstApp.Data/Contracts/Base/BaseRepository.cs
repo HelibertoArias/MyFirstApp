@@ -7,7 +7,7 @@ using System.Linq.Expressions;
 
 namespace MyFirstApp.Data.Contracts.Base
 {
-    public class BaseRepository<Entity> : IBaseRepository<Entity> where Entity : BaseEntity
+    public abstract class BaseRepository<Entity> : IBaseRepository<Entity> where Entity : BaseEntity
     {
         private MyFirstAppContext dataContext;
         private readonly IDbSet<Entity> dbSet;
@@ -30,27 +30,27 @@ namespace MyFirstApp.Data.Contracts.Base
             dbSet = DbContext.Set<Entity>();
         }
 
-        public void Add(Entity p)
+        public virtual void Add(Entity p)
         {
             throw new NotImplementedException();
         }
 
-        public void Edit(Entity p)
+        public virtual void Edit(Entity p)
         {
             throw new NotImplementedException();
         }
 
-        public void Remove(long Id)
+        public virtual void Remove(long Id)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Entity> Get(Expression<Func<Entity, bool>> predicate)
+        public virtual IEnumerable<Entity> Get(Expression<Func<Entity, bool>> predicate)
         {
             throw new NotImplementedException();
         }
 
-        public Entity FindById(long Id)
+        public virtual Entity FindById(long Id)
         {
             throw new NotImplementedException();
         }

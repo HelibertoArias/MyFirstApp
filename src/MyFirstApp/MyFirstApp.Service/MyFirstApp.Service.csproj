@@ -40,7 +40,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IPersonService.cs" />
+    <Compile Include="PersonService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MyFirstApp.Data\MyFirstApp.Data.csproj">
+      <Project>{D67D8618-F652-479E-A2BC-F85E7330404E}</Project>
+      <Name>MyFirstApp.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyFirstApp.Model\MyFirstApp.Model.csproj">
+      <Project>{E9810125-DDF3-4788-B5CE-1227EC04B4EC}</Project>
+      <Name>MyFirstApp.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyFirstApp.Repository\MyFirstApp.Repository.csproj">
+      <Project>{C177CFF2-BA3F-4810-A144-D8EB66EA2E94}</Project>
+      <Name>MyFirstApp.Repository</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
