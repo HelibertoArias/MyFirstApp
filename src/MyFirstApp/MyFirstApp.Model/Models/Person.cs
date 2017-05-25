@@ -1,6 +1,6 @@
-﻿using MyFirstApp.Data.Entity.Base;
+﻿using MyFirstApp.Model.Base;
 
-namespace MyFirstApp.Data.Entity
+namespace MyFirstApp.Model.Models
 {
     public class Person : BaseEntity
     {
