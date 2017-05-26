@@ -1,5 +1,4 @@
 ﻿using MyFirstApp.Data.Configuration.Map;
-using MyFirstApp.Model.Base;
 using MyFirstApp.Model.Models;
 using System.Data.Entity;
 

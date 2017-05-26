@@ -1,0 +1,25 @@
+﻿@using MyFirstApp.Web.Controllers
+
+@model List<Post>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>Lista de post</p>
+
+@foreach (Post item in Model)
+{
+    @Html.Partial("Post", item);
+}
+
+
+
+@foreach (Post item in Model)
+{
+
+    @{ Html.RenderPartial("Post", item)  }
+
+}
+

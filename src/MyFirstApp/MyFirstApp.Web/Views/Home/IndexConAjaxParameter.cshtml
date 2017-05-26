@@ -1,0 +1,56 @@
+﻿
+<h2>IndexConAjaxParameter</h2>
+
+<script src='@Url.Content("~/Scripts/jquery-1.9.1.js")'></script>
+
+<script>
+    $(function () {
+
+        //window.setTimeout(MakeRequest, 3*1000);
+        MakeRequest();
+        
+
+        //http://localhost:52908/home/IndexConAjaxParameter?id=4
+        function MakeRequest() {
+
+            var urlParams = new URLSearchParams(window.location.search);
+
+            $.ajax({
+                cache: false,
+                timeout: 1000 * 60,
+                url: './IndexConAjaxParameter/' + urlParams.get('id'),
+                data: '',
+                type: 'GET',
+                contentType: "application/json",
+                beforeSend: function () {
+                    console.log("beforeSend");
+
+                },
+                success: function (data) {
+                    console.log("success");
+                    alert("Nombre:" + data.Nombre);
+                },
+                complete: function (data) {
+                    console.log("complete");
+
+                },
+                error: function (response, status, error) {
+
+                    if (response.status === 400) {
+                        alert("Se presentor el siguiente error BadRequest: " + response.status);
+                    } else if (response.status === 404) {
+                        alert("El recurso no existe NotFound : " + response.status);
+                    }
+
+                    console.log("response " + response.statusText);
+                    console.log("status " + response.status);
+                    console.log("error " + error);
+                }
+
+            });
+        }
+
+
+
+    });
+</script>

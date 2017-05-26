@@ -1,0 +1,14 @@
+﻿ @using MyFirstApp.Web.Controllers
+
+ViewBag : @ViewBag.Texto <br />
+TempData : @TempData["Texto"] <br />
+
+ViewBag : @ViewBag.Obj.Nombre <br />
+@{
+    var d = TempData["Obj"] as Dummy;
+  
+}
+
+<text>TempData : @d.Nombre </text>
+
+

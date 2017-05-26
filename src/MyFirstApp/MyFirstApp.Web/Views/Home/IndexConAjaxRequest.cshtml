@@ -1,0 +1,45 @@
+﻿
+<h2>IndexConAjaxRequest</h2>
+
+<script src='@Url.Content("~/Scripts/jquery-1.9.1.js")' ></script>
+
+<script>
+    $(function () {
+
+        //window.setTimeout(MakeRequest, 3*1000);
+        MakeRequest();
+
+        function MakeRequest() {
+            $.ajax({
+                cache: false,
+                timeout: 1000 * 60,
+                url: './IndexConAjaxRequest',
+                data: '',
+                type: 'GET',
+                contentType: "application/json",
+                beforeSend: function () {
+                    console.log("beforeSend");
+
+                },
+                success: function (data) {
+                    console.log("success");
+                    alert("Nombre:" + data.Nombre);
+                },
+                complete: function (data) {
+                    console.log("complete");
+                    
+                },
+                error: function (response, status, error) {
+                    console.log("response " + response.statusText);
+                    console.log("status " + response.status);
+                    console.log("error " + error);
+                }
+                
+
+            });
+        }
+        
+
+
+    });
+</script>
